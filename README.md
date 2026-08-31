@@ -6,16 +6,6 @@ Cafe Central desea implementar un sistema para administrar sus clientes, product
 
 El objetivo de este proyecto es proponer una base de datos orientada a documentos que permita almacenar la informacion de la cafeteria de forma persistente, organizada y flexible, facilitando consultas frecuentes sobre clientes, productos y pedidos.
 
-## Problematica
-
-La cafeteria presenta los siguientes problemas:
-
-- La informacion se encuentra dispersa en hojas de calculo.
-- Es dificil consultar rapidamente los pedidos realizados por un cliente.
-- No existe una forma eficiente de conocer los productos mas vendidos.
-- La informacion de clientes, productos y pedidos puede quedar desactualizada.
-- El crecimiento de registros dificulta la administracion manual de los datos.
-
 ## Objetivo general
 
 Diseñar una base de datos orientada a documentos para una plataforma de pedidos de una cafeteria que permita registrar, consultar, actualizar y administrar clientes, productos y pedidos de manera eficiente.
@@ -89,8 +79,7 @@ Diseñar una base de datos orientada a documentos para una plataforma de pedidos
 
 ## Tipo de base de datos seleccionada
 
-Para este proyecto se propone utilizar una base de datos orientada a documentos, como MongoDB. Este tipo de base de datos almacena la informacion en documentos con una estructura similar a JSON, lo que permite representar de forma flexible datos como clientes, productos y pedidos.
-
+Para este proyecto se propone utilizar una base de datos orientada a documentos, como MongoDB.
 Esta opcion es adecuada para la cafeteria porque un pedido puede contener varios productos dentro del mismo documento, incluyendo cantidad, precio unitario y subtotal. Esto facilita consultar rapidamente el detalle completo de un pedido sin depender de multiples tablas intermedias.
 
 ## Colecciones principales
@@ -164,22 +153,6 @@ Documento sugerido:
 
 En la coleccion de pedidos se recomienda guardar informacion resumida del cliente y de los productos. Esto conserva el historial del pedido aunque despues cambie el precio de un producto o se actualicen los datos del cliente.
 
-## Consultas esperadas
-
-La base de datos debera permitir realizar consultas como:
-
-- Consultar todos los clientes registrados.
-- Consultar todos los productos disponibles.
-- Consultar los pedidos realizados por un cliente.
-- Consultar el detalle de productos de un pedido.
-- Calcular el total de un pedido.
-- Consultar los productos mas vendidos.
-- Consultar pedidos por fecha.
-- Consultar pedidos por estado.
-
-## Alcance del proyecto
-
-El proyecto se enfoca en el diseño de una base de datos para administrar la informacion principal de una cafeteria. La practica contempla la definicion de requisitos, entidades, relaciones y consultas necesarias para gestionar clientes, productos y pedidos.
 
 ## Modelo de base de datos orientado a documentos
 
@@ -191,13 +164,4 @@ Una estructura recomendada para la base de datos seria:
 
 Los pedidos almacenan un arreglo de productos solicitados dentro del mismo documento. Cada elemento del arreglo contiene el producto, la cantidad, el precio unitario y el subtotal.
 
-Aunque los productos tambien existen en la coleccion `productos`, dentro de cada pedido se guarda una copia resumida de la informacion necesaria para mantener el historial de la venta.
 
-## Ventajas del modelo documental
-
-- Permite representar pedidos completos en un solo documento.
-- Facilita consultar rapidamente los productos incluidos en un pedido.
-- Permite manejar ingredientes como arreglos dentro del documento del producto.
-- Ofrece flexibilidad para agregar nuevos campos en el futuro.
-- Reduce la necesidad de uniones complejas para consultar pedidos.
-- Es adecuada para consultas frecuentes como pedidos por cliente, pedidos por estado y productos mas vendidos.
