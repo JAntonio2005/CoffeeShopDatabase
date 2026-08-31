@@ -1,20 +1,8 @@
 # Plataforma de pedidos de Cafe Central
 
-## Descripcion del proyecto
+## Descripcion
 
 Cafe Central desea implementar un sistema para administrar sus clientes, productos y pedidos. Actualmente la informacion se registra en hojas de calculo, lo que dificulta consultar rapidamente los pedidos de los clientes, conocer los productos mas vendidos y mantener la informacion actualizada.
-
-El objetivo de este proyecto es proponer una base de datos que permita almacenar la informacion de la cafeteria de forma persistente, organizada y flexible, facilitando consultas frecuentes sobre clientes, productos y pedidos.
-
-## Problematica
-
-La cafeteria presenta los siguientes problemas:
-
-- La informacion se encuentra dispersa en hojas de calculo.
-- Es dificil consultar rapidamente los pedidos realizados por un cliente.
-- No existe una forma eficiente de conocer los productos mas vendidos.
-- La informacion de clientes, productos y pedidos puede quedar desactualizada.
-- El crecimiento de registros dificulta la administracion manual de los datos.
 
 ## Objetivo general
 
@@ -142,29 +130,4 @@ Campos sugeridos:
 - precio_unitario
 - subtotal
 
-## Consultas esperadas
 
-La base de datos debera permitir realizar consultas como:
-
-- Consultar todos los clientes registrados.
-- Consultar todos los productos disponibles.
-- Consultar los pedidos realizados por un cliente.
-- Consultar el detalle de productos de un pedido.
-- Calcular el total de un pedido.
-- Consultar los productos mas vendidos.
-- Consultar pedidos por fecha.
-- Consultar pedidos por estado.
-
-## Alcance del proyecto
-
-El proyecto se enfoca en el diseño de una base de datos para administrar la informacion principal de una cafeteria. La practica contempla la definicion de requisitos, entidades, relaciones y consultas necesarias para gestionar clientes, productos y pedidos.
-
-## Posible modelo de base de datos
-
-Una estructura recomendada para la base de datos seria:
-
-- Cliente 1 a N Pedido
-- Pedido 1 a N DetallePedido
-- Producto 1 a N DetallePedido
-
-Esto permite que un cliente tenga varios pedidos, que un pedido incluya varios productos y que un producto pueda aparecer en diferentes pedidos.
