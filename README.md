@@ -1,6 +1,6 @@
 # Plataforma de pedidos de Cafe Central
 
-## Descripcion del proyecto
+## Descripcion
 
 Cafe Central desea implementar un sistema para administrar sus clientes, productos y pedidos. Actualmente la informacion se registra en hojas de calculo, lo que dificulta consultar rapidamente los pedidos de los clientes, conocer los productos mas vendidos y mantener la informacion actualizada.
 
