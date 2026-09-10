@@ -201,3 +201,12 @@ Aunque los productos tambien existen en la coleccion `productos`, dentro de cada
 - Ofrece flexibilidad para agregar nuevos campos en el futuro.
 - Reduce la necesidad de uniones complejas para consultar pedidos.
 - Es adecuada para consultas frecuentes como pedidos por cliente, pedidos por estado y productos mas vendidos.
+
+## Diagramas
+
+El proyecto incluye diagramas editables en draw.io dentro de la carpeta `docs/diagramas`.
+
+- `modelo-documental.drawio`: representa las colecciones `clientes`, `productos` y `pedidos`.
+- `flujo-pedidos.drawio`: representa el proceso general para crear y consultar pedidos.
+
+Estos archivos pueden abrirse en https://app.diagrams.net/ para editarlos o exportarlos como imagen/PDF.
