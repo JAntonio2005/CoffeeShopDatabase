@@ -97,10 +97,19 @@ Documento sugerido:
   "apellido": "Lopez",
   "correo_electronico": "ana@example.com",
   "telefono": "5551234567",
-  "direccion": "Av. Central 123",
+  "direccion": {
+    "calle": "Av. Central",
+    "numero": "123",
+    "colonia": "Centro",
+    "ciudad": "Xalapa",
+    "estado": "Veracruz",
+    "codigo_postal": "91000"
+  },
   "fecha_registro": "2026-08-31"
 }
 ```
+
+El campo `direccion` se representa como un documento embebido porque esta compuesto por varios datos relacionados que pertenecen directamente al cliente.
 
 ### productos
 
