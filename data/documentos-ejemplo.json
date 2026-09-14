@@ -1,0 +1,283 @@
+{
+  "clientes": [
+    {
+      "_id": "cliente_001",
+      "nombre": "Ana",
+      "apellido": "Lopez",
+      "correo_electronico": "ana.lopez@example.com",
+      "telefono": "5551234567",
+      "direccion": {
+        "calle": "Av. Central",
+        "numero": "123",
+        "colonia": "Centro",
+        "ciudad": "Xalapa",
+        "estado": "Veracruz",
+        "codigo_postal": "91000"
+      },
+      "fecha_registro": "2026-08-31"
+    },
+    {
+      "_id": "cliente_002",
+      "nombre": "Carlos",
+      "apellido": "Martinez",
+      "correo_electronico": "carlos.martinez@example.com",
+      "telefono": "5559876543",
+      "direccion": {
+        "calle": "Calle Hidalgo",
+        "numero": "45",
+        "colonia": "Revolucion",
+        "ciudad": "Xalapa",
+        "estado": "Veracruz",
+        "codigo_postal": "91100"
+      },
+      "fecha_registro": "2026-09-01"
+    },
+    {
+      "_id": "cliente_003",
+      "nombre": "Mariana",
+      "apellido": "Garcia",
+      "correo_electronico": "mariana.garcia@example.com",
+      "telefono": "5552468101",
+      "direccion": {
+        "calle": "Privada Los Pinos",
+        "numero": "18",
+        "colonia": "Jardines",
+        "ciudad": "Xalapa",
+        "estado": "Veracruz",
+        "codigo_postal": "91020"
+      },
+      "fecha_registro": "2026-09-02"
+    },
+    {
+      "_id": "cliente_004",
+      "nombre": "Luis",
+      "apellido": "Hernandez",
+      "correo_electronico": "luis.hernandez@example.com",
+      "telefono": "5551122334",
+      "direccion": {
+        "calle": "Av. Universidad",
+        "numero": "210",
+        "colonia": "Unidad Magisterial",
+        "ciudad": "Xalapa",
+        "estado": "Veracruz",
+        "codigo_postal": "91010"
+      },
+      "fecha_registro": "2026-09-03"
+    },
+    {
+      "_id": "cliente_005",
+      "nombre": "Sofia",
+      "apellido": "Ramirez",
+      "correo_electronico": "sofia.ramirez@example.com",
+      "telefono": "5555566778",
+      "direccion": {
+        "calle": "Calle Morelos",
+        "numero": "72",
+        "colonia": "Zona Centro",
+        "ciudad": "Xalapa",
+        "estado": "Veracruz",
+        "codigo_postal": "91030"
+      },
+      "fecha_registro": "2026-09-04"
+    }
+  ],
+  "productos": [
+    {
+      "_id": "producto_001",
+      "nombre": "Cafe americano",
+      "categoria": "Bebidas calientes",
+      "precio": 35.0,
+      "descripcion": "Cafe negro preparado al momento",
+      "ingredientes": ["cafe", "agua"],
+      "disponibilidad": true
+    },
+    {
+      "_id": "producto_002",
+      "nombre": "Cafe latte",
+      "categoria": "Bebidas calientes",
+      "precio": 45.0,
+      "descripcion": "Cafe con leche vaporizada",
+      "ingredientes": ["cafe", "leche"],
+      "disponibilidad": true
+    },
+    {
+      "_id": "producto_003",
+      "nombre": "Capuchino",
+      "categoria": "Bebidas calientes",
+      "precio": 48.0,
+      "descripcion": "Cafe espresso con leche y espuma",
+      "ingredientes": ["cafe", "leche", "espuma de leche"],
+      "disponibilidad": true
+    },
+    {
+      "_id": "producto_004",
+      "nombre": "Pan dulce",
+      "categoria": "Panaderia",
+      "precio": 25.0,
+      "descripcion": "Pieza de pan dulce artesanal",
+      "ingredientes": ["harina", "azucar", "mantequilla"],
+      "disponibilidad": true
+    },
+    {
+      "_id": "producto_005",
+      "nombre": "Sandwich de jamon",
+      "categoria": "Alimentos",
+      "precio": 60.0,
+      "descripcion": "Sandwich preparado con jamon, queso y vegetales",
+      "ingredientes": ["pan", "jamon", "queso", "lechuga", "jitomate"],
+      "disponibilidad": true
+    }
+  ],
+  "pedidos": [
+    {
+      "_id": "pedido_001",
+      "cliente": {
+        "id_cliente": "cliente_001",
+        "nombre": "Ana",
+        "apellido": "Lopez",
+        "correo_electronico": "ana.lopez@example.com"
+      },
+      "fecha": "2026-09-05",
+      "productos": [
+        {
+          "id_producto": "producto_001",
+          "nombre": "Cafe americano",
+          "categoria": "Bebidas calientes",
+          "cantidad": 2,
+          "precio_unitario": 35.0,
+          "subtotal": 70.0
+        },
+        {
+          "id_producto": "producto_004",
+          "nombre": "Pan dulce",
+          "categoria": "Panaderia",
+          "cantidad": 1,
+          "precio_unitario": 25.0,
+          "subtotal": 25.0
+        }
+      ],
+      "total": 95.0,
+      "estado": "entregado"
+    },
+    {
+      "_id": "pedido_002",
+      "cliente": {
+        "id_cliente": "cliente_002",
+        "nombre": "Carlos",
+        "apellido": "Martinez",
+        "correo_electronico": "carlos.martinez@example.com"
+      },
+      "fecha": "2026-09-05",
+      "productos": [
+        {
+          "id_producto": "producto_002",
+          "nombre": "Cafe latte",
+          "categoria": "Bebidas calientes",
+          "cantidad": 1,
+          "precio_unitario": 45.0,
+          "subtotal": 45.0
+        },
+        {
+          "id_producto": "producto_005",
+          "nombre": "Sandwich de jamon",
+          "categoria": "Alimentos",
+          "cantidad": 1,
+          "precio_unitario": 60.0,
+          "subtotal": 60.0
+        }
+      ],
+      "total": 105.0,
+      "estado": "preparacion"
+    },
+    {
+      "_id": "pedido_003",
+      "cliente": {
+        "id_cliente": "cliente_003",
+        "nombre": "Mariana",
+        "apellido": "Garcia",
+        "correo_electronico": "mariana.garcia@example.com"
+      },
+      "fecha": "2026-09-06",
+      "productos": [
+        {
+          "id_producto": "producto_003",
+          "nombre": "Capuchino",
+          "categoria": "Bebidas calientes",
+          "cantidad": 2,
+          "precio_unitario": 48.0,
+          "subtotal": 96.0
+        }
+      ],
+      "total": 96.0,
+      "estado": "pendiente"
+    },
+    {
+      "_id": "pedido_004",
+      "cliente": {
+        "id_cliente": "cliente_004",
+        "nombre": "Luis",
+        "apellido": "Hernandez",
+        "correo_electronico": "luis.hernandez@example.com"
+      },
+      "fecha": "2026-09-06",
+      "productos": [
+        {
+          "id_producto": "producto_001",
+          "nombre": "Cafe americano",
+          "categoria": "Bebidas calientes",
+          "cantidad": 1,
+          "precio_unitario": 35.0,
+          "subtotal": 35.0
+        },
+        {
+          "id_producto": "producto_002",
+          "nombre": "Cafe latte",
+          "categoria": "Bebidas calientes",
+          "cantidad": 1,
+          "precio_unitario": 45.0,
+          "subtotal": 45.0
+        },
+        {
+          "id_producto": "producto_004",
+          "nombre": "Pan dulce",
+          "categoria": "Panaderia",
+          "cantidad": 2,
+          "precio_unitario": 25.0,
+          "subtotal": 50.0
+        }
+      ],
+      "total": 130.0,
+      "estado": "entregado"
+    },
+    {
+      "_id": "pedido_005",
+      "cliente": {
+        "id_cliente": "cliente_005",
+        "nombre": "Sofia",
+        "apellido": "Ramirez",
+        "correo_electronico": "sofia.ramirez@example.com"
+      },
+      "fecha": "2026-09-07",
+      "productos": [
+        {
+          "id_producto": "producto_005",
+          "nombre": "Sandwich de jamon",
+          "categoria": "Alimentos",
+          "cantidad": 2,
+          "precio_unitario": 60.0,
+          "subtotal": 120.0
+        },
+        {
+          "id_producto": "producto_003",
+          "nombre": "Capuchino",
+          "categoria": "Bebidas calientes",
+          "cantidad": 1,
+          "precio_unitario": 48.0,
+          "subtotal": 48.0
+        }
+      ],
+      "total": 168.0,
+      "estado": "pendiente"
+    }
+  ]
+}
