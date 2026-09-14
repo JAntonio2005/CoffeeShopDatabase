@@ -1,33 +1,42 @@
-<mxfile host="app.diagrams.net" modified="2026-09-10T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+<mxfile host="app.diagrams.net" modified="2026-09-14T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
   <diagram id="modelo-documental" name="Modelo documental">
-    <mxGraphModel dx="1186" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1186" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="Modelo documental - Cafe Central" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#3A2A1A;" vertex="1" parent="1">
-          <mxGeometry x="260" y="30" width="580" height="50" as="geometry" />
+        <mxCell id="title" value="Modelo de datos orientado a documentos - Cafe Central" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#3A2A1A;" vertex="1" parent="1">
+          <mxGeometry x="245" y="30" width="710" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="clientes" value="coleccion: clientes&#xa;&#xa;_id: ObjectId&#xa;nombre: string&#xa;apellido: string&#xa;correo_electronico: string&#xa;telefono: string&#xa;direccion: string&#xa;fecha_registro: date" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;align=left;spacing=12;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="80" y="130" width="250" height="220" as="geometry" />
+        <mxCell id="subtitle" value="Cada hoja representa un documento de ejemplo dentro de una coleccion." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#6B5A45;" vertex="1" parent="1">
+          <mxGeometry x="310" y="75" width="580" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="productos" value="coleccion: productos&#xa;&#xa;_id: ObjectId&#xa;nombre: string&#xa;categoria: string&#xa;precio: number&#xa;descripcion: string&#xa;ingredientes: array&#xa;disponibilidad: boolean" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;align=left;spacing=12;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="770" y="130" width="250" height="220" as="geometry" />
+        <mxCell id="clientes_doc" value="&lt;b&gt;clientes&lt;/b&gt;&#xa;&#xa;{&#xa;  _id: ObjectId,&#xa;  nombre: String,&#xa;  apellido: String,&#xa;  correo_electronico: String,&#xa;  telefono: String,&#xa;  direccion: String,&#xa;  fecha_registro: Date&#xa;}" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=26;fillColor=#FFF8E8;strokeColor=#7A4B2A;strokeWidth=2;fontSize=14;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="300" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="pedidos" value="coleccion: pedidos&#xa;&#xa;_id: ObjectId&#xa;cliente: object embebido/resumen&#xa;fecha: date&#xa;productos: array de objetos&#xa;  - id_producto: ObjectId&#xa;  - nombre: string&#xa;  - cantidad: number&#xa;  - precio_unitario: number&#xa;  - subtotal: number&#xa;total: number&#xa;estado: string" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13;align=left;spacing=12;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="390" y="430" width="320" height="290" as="geometry" />
+        <mxCell id="productos_doc" value="&lt;b&gt;productos&lt;/b&gt;&#xa;&#xa;{&#xa;  _id: ObjectId,&#xa;  nombre: String,&#xa;  categoria: String,&#xa;  precio: Number,&#xa;  descripcion: String,&#xa;  ingredientes: [String],&#xa;  disponibilidad: Boolean&#xa;}" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=26;fillColor=#EEF8EA;strokeColor=#496B3A;strokeWidth=2;fontSize=14;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry x="820" y="160" width="300" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="cliente-pedido" value="referencia o copia resumida del cliente" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#8A6D3B;fontSize=12;" edge="1" parent="1" source="clientes" target="pedidos">
+        <mxCell id="pedidos_doc" value="&lt;b&gt;pedidos&lt;/b&gt;&#xa;&#xa;{&#xa;  _id: ObjectId,&#xa;  cliente: { ... },&#xa;  fecha: Date,&#xa;  productos: [ ... ],&#xa;  total: Number,&#xa;  estado: String&#xa;}" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=26;fillColor=#EAF2FF;strokeColor=#365F91;strokeWidth=2;fontSize=14;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry x="405" y="530" width="390" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="cliente_embebido" value="&lt;b&gt;cliente embebido&lt;/b&gt;&#xa;&#xa;{&#xa;  id_cliente: ObjectId,&#xa;  nombre: String,&#xa;  apellido: String,&#xa;  correo_electronico: String&#xa;}" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=18;fillColor=#FFF8E8;strokeColor=#7A4B2A;strokeWidth=1.5;fontSize=12;align=left;verticalAlign=top;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="425" y="635" width="170" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="productos_embebidos" value="&lt;b&gt;productos embebidos&lt;/b&gt;&#xa;&#xa;[ {&#xa;  id_producto: ObjectId,&#xa;  nombre: String,&#xa;  cantidad: Number,&#xa;  precio_unitario: Number,&#xa;  subtotal: Number&#xa;} ]" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=18;fillColor=#EEF8EA;strokeColor=#496B3A;strokeWidth=1.5;fontSize=12;align=left;verticalAlign=top;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="605" y="635" width="170" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="cliente_pedido" value="referencia por id y copia resumida para historial" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#7A4B2A;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="clientes_doc" target="pedidos_doc">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="340" y="340" as="targetPoint" />
+            <mxPoint x="355" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="producto-pedido" value="productos solicitados embebidos en el pedido" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#4F7D45;fontSize=12;" edge="1" parent="1" source="productos" target="pedidos">
+        <mxCell id="producto_pedido" value="referencia por id y productos embebidos en el pedido" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#496B3A;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="productos_doc" target="pedidos_doc">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="720" y="350" as="targetPoint" />
+            <mxPoint x="845" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="nota" value="Decision de diseno: los catalogos de clientes y productos se guardan en colecciones separadas. Cada pedido guarda la informacion necesaria del cliente y de los productos para conservar el historial de la venta." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
-          <mxGeometry x="220" y="770" width="660" height="60" as="geometry" />
+        <mxCell id="nota" value="Lectura del modelo: clientes y productos son colecciones independientes. El documento pedidos guarda objetos embebidos para consultar una venta completa y conservar el precio, cantidad y subtotal del momento de la compra." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="170" y="855" width="860" height="45" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
