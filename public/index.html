@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cafe Central</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Base documental</p>
+          <h1>Cafe Central</h1>
+        </div>
+        <div class="status" id="db-status">Conectando con MongoDB...</div>
+      </section>
+
+      <section class="metrics" aria-label="Resumen">
+        <article>
+          <span id="metric-clientes">0</span>
+          <p>Clientes</p>
+        </article>
+        <article>
+          <span id="metric-productos">0</span>
+          <p>Productos</p>
+        </article>
+        <article>
+          <span id="metric-pedidos">0</span>
+          <p>Pedidos</p>
+        </article>
+        <article>
+          <span id="metric-ventas">$0</span>
+          <p>Total vendido</p>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel">
+          <div class="panel-header">
+            <h2>Clientes</h2>
+            <span>coleccion</span>
+          </div>
+          <div class="list" id="clientes-list"></div>
+        </aside>
+
+        <section class="panel main-panel">
+          <div class="panel-header">
+            <h2>Pedidos</h2>
+            <span>documentos con productos embebidos</span>
+          </div>
+          <div class="orders" id="pedidos-list"></div>
+        </section>
+
+        <aside class="panel">
+          <div class="panel-header">
+            <h2>Productos</h2>
+            <span>catalogo</span>
+          </div>
+          <div class="list" id="productos-list"></div>
+        </aside>
+      </section>
+
+      <section class="panel report-panel">
+        <div class="panel-header">
+          <h2>Productos mas vendidos</h2>
+          <span>agregacion desde pedidos</span>
+        </div>
+        <div class="ranking" id="ranking-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

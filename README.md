@@ -191,3 +191,74 @@ El proyecto incluye diagramas editables en draw.io dentro de la carpeta `docs/di
 - `flujo-pedidos.drawio`: representa el proceso general para crear y consultar pedidos.
 
 Estos archivos pueden abrirse en https://app.diagrams.net/ para editarlos o exportarlos como imagen/PDF.
+
+## Aplicacion web y API
+
+El proyecto incluye una pequena API y una pagina web para consultar la base de datos documental de Cafe Central.
+
+### Tecnologias utilizadas
+
+- Node.js
+- Express
+- MongoDB
+- MongoDB Compass
+- HTML, CSS y JavaScript
+
+### Estructura de la aplicacion
+
+- `src/server.js`: servidor Express y rutas de la API.
+- `src/db.js`: conexion con MongoDB.
+- `src/seed.js`: carga los documentos de ejemplo en la base de datos.
+- `public/`: pagina web que consume la API.
+- `data/documentos-ejemplo.json`: datos de prueba con 5 clientes, 5 productos y 5 pedidos.
+
+### Configuracion
+
+1. Instalar dependencias:
+
+```bash
+npm install
+```
+
+2. Copiar el archivo de variables de entorno:
+
+```bash
+copy .env.example .env
+```
+
+3. Verificar que `.env` tenga la conexion correcta:
+
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017
+DB_NAME=cafe_central
+PORT=3000
+```
+
+4. Cargar los documentos de ejemplo en MongoDB:
+
+```bash
+npm run seed
+```
+
+5. Iniciar la aplicacion:
+
+```bash
+npm run dev
+```
+
+6. Abrir en el navegador:
+
+```text
+http://localhost:3000
+```
+
+### Endpoints principales
+
+- `GET /api/health`: verifica la conexion con MongoDB.
+- `GET /api/clientes`: consulta los clientes registrados.
+- `GET /api/productos`: consulta los productos registrados.
+- `GET /api/pedidos`: consulta los pedidos registrados.
+- `GET /api/pedidos/cliente/:idCliente`: consulta los pedidos de un cliente.
+- `GET /api/reportes/productos-mas-vendidos`: consulta los productos mas vendidos.
+
+La pagina web utiliza estos endpoints para mostrar clientes, productos, pedidos y un reporte de productos mas vendidos.
